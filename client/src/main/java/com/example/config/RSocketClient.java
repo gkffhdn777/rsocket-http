@@ -26,7 +26,7 @@ public class RSocketClient {
 
 	@Bean
 	public Mono<RSocketRequester> monoRequester() {
-		Supplier<InetSocketAddress> addressSupplier = () -> new InetSocketAddress("172.19.151.106", 7000);
+		Supplier<InetSocketAddress> addressSupplier = () -> new InetSocketAddress("localhost", 7000);
 
 		TcpClient tcpClient = TcpClient.create()
 				.option(ChannelOption.CONNECT_TIMEOUT_MILLIS, 1000)

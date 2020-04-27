@@ -17,8 +17,7 @@ public class RestClient {
 						connection.addHandlerLast(new ReadTimeoutHandler(1000)));
 		return WebClient
 				.builder()
-				.baseUrl("http://172.19.148.184:7001")
-				//.baseUrl("http://localhost:7001")
+				.baseUrl("http://localhost:7001")
 				.clientConnector(new ReactorClientHttpConnector(
 						HttpClient.from(tcpClient.option(ChannelOption.SO_KEEPALIVE, true)).keepAlive(true))
 				).build();
