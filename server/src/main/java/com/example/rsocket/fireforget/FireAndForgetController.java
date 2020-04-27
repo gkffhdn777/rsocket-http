@@ -1,5 +1,7 @@
 package com.example.rsocket.fireforget;
 
+import java.time.Duration;
+
 import com.example.domain.RequestMessage;
 import lombok.extern.slf4j.Slf4j;
 import reactor.core.publisher.Mono;
@@ -12,8 +14,10 @@ import org.springframework.stereotype.Controller;
 public class FireAndForgetController {
 
 	@MessageMapping("fire-forget")
-	public Mono<Void> fire(RequestMessage requestMessage) throws Exception {
+	public Mono<Void> fire(RequestMessage requestMessage) {
 		log.debug("Message : {}", requestMessage.getReqMessage());
-		return Mono.empty();
+		return Mono.just(requestMessage.getReqMessage())
+				.delayElement(Duration.ofMillis(500))
+				.then();
 	}
 }
