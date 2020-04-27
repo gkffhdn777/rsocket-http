@@ -20,7 +20,6 @@ public class ReqResModelController {
 	public ReqResModelController() {
 		Map<String, String> map = new HashMap<>();
 		map.put("1", "kimminsuk");
-		map.put("2", "NC");
 		map.put("3", "etc");
 		this.unmodifiableMap = Collections.unmodifiableMap(map);
 	}
