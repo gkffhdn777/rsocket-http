@@ -15,6 +15,7 @@ HTTP 또한 동일 하게 RSocket 모델을 따라 구현해보도록 한다.
 
 #RSocket 
 client -> server -> otherserver
+(server -> otherserver 서버간에 양방향 통신을 하고 있으며 어느 한쪽의 변경 되면 상태가 변경됨)
 
 #HTTP
 restclient -> rest
